@@ -1,0 +1,16 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: xmsgapi
+  namespace: perf
+spec:
+  template:
+    metadata:
+      labels:
+        app: xmsgapi
+    spec:
+      containers:
+      - name: xmsgapi
+        image: xchangeregistry.azurecr.io/xmsg.api:18
+      imagePullSecrets:
+      - name: acr-auth

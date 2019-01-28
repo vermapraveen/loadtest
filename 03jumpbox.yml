@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ubuntu
+  namespace: perf  
+spec:
+  containers:
+  - name: ubuntu
+    image: ubuntu
+    # Just spin & wait forever
+    command: [ "/bin/bash", "-c", "--" ]
+    args: [ "while true; do sleep 30; done;" ]
